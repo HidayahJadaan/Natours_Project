@@ -232,10 +232,10 @@ body {
   gap: 8rem;
 }
 
-// .col-1-of-2{
-//     grid-template-columns: repeat(2, 1fr);
-//     // width: calc((100% - #{$gutter-horizontal}) / 2);
-// }
+.col-1-of-2 {
+  // grid-template-columns: repeat(2, 1fr);
+  // width: calc((100% - #{$gutter-horizontal}) / 2);
+}
 
 .u-margin-bottom-big {
   margin-bottom: 7.5rem;
@@ -248,14 +248,12 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem;
 }
-// .col-1-of-3{
-//     width: calc((100% - #{$gutter-horizontal}) / 3);
-// }
 
 .heading-tertiary {
   font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 2rem;
 }
 .paragraph {
   font-size: 1.2rem;
@@ -301,8 +299,7 @@ body {
     z-index: 10;
     transition: all 0.2s;
     outline-offset: 2rem; //the space between the element and the outline border
-   
-   
+
     &--p1 {
       left: 0;
       top: -2rem;
@@ -316,19 +313,75 @@ body {
       top: 10rem;
     }
     &:hover {
-        outline: 1rem solid $primary-green;
+      outline: 1rem solid $primary-green;
       transform: scale(1.05) translateY(-0.5rem);
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 20;
     }
-
-
   }
-// as soon as we hover the composition element, select the photo that neasted inside of it and then
-// select the one that is not hover
-  &:hover &__photo:not(:hover){
-// composition:hover composition__photo:not(:hover)
+  // as soon as we hover the composition element, select the photo that neasted inside of it and then
+  // select the one that is not hover
+  &:hover &__photo:not(:hover) {
+    // composition:hover composition__photo:not(:hover)
 
-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+.cards {
+  padding: 0 12rem;
+  max-width: $grid-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.section-features {
+  padding: 20rem 0;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(128, 214, 113, 0.8),
+      rgba(39, 180, 133, 0.8)
+    ),
+    url("../img/nat-4.jpg");
+  background-size: cover;
+
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.feature-box {
+  background-color: rgba($color-white, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  transition: transform 0.3s;
+
+  &__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    // background-image:
+    // linear-gradient(to right, $light-green, $dark-green);
+    // display: inline-block;
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    color: $primary-green;
+  }
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+  & h3 {
+    font-size: 1.3rem;
+    font-weight: 900;
+  }
+  &__text {
+    text-align: justify;
   }
 }
