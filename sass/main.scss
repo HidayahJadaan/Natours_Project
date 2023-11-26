@@ -3,9 +3,15 @@
 $primary-green: #55c57a;
 $light-green: #7ed56f;
 $dark-green: #28b485;
+$color-secondary-light:#ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
 $color-grey-dark: #777;
-$color-white: #fff;
 $color-grey-light-1: #f7f7f7;
+$color-white: #fff;
 $color-black: #000;
 
 // FONT
@@ -383,5 +389,61 @@ body {
   }
   &__text {
     text-align: justify;
+  }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 40rem 0 50rem 0;
+    margin-top: -20rem;
+}
+.tours {
+  padding: 0 12rem;
+  max-width: $grid-width;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  &__side {
+    height: 40rem;
+    color: #fff;
+    font-size: 2rem;
+    transition: all 1s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // hide the back side of the element (already on 180deg)
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1{
+        background-image:linear-gradient(
+            to right bottom , 
+            $color-secondary-light, $color-secondary-dark);
+        
+       
+      }
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
   }
 }
