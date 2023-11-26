@@ -401,7 +401,7 @@ body {
 }
 .tours {
   padding: 0 12rem;
-//   max-width: $grid-width;
+  //   max-width: $grid-width;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -442,23 +442,20 @@ body {
         );
       }
 
-
       &-2 {
-        background-image:  linear-gradient(
-        to right bottom,
-        $primary-green,
-        $dark-green
-      );
+        background-image: linear-gradient(
+          to right bottom,
+          $primary-green,
+          $dark-green
+        );
       }
-
-
 
       &-3 {
         background-image: linear-gradient(
-        to right bottom,
-        $color-tertiary-light,
-        $color-tertiary-dark
-      ) ;
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
       }
     }
   }
@@ -488,20 +485,21 @@ body {
     }
 
     &--2 {
-      background-image:  linear-gradient(
-        to right bottom,
-        $primary-green,
-        $dark-green
-      ),
-      url("../img/nat-6.jpg");
+      background-image: linear-gradient(
+          to right bottom,
+          $primary-green,
+          $dark-green
+        ),
+        url("../img/nat-6.jpg");
     }
 
     &--3 {
       background-image: linear-gradient(
-        to right bottom,
-        $color-tertiary-light,
-        $color-tertiary-dark
-      ),url("../img/nat-7.jpg");
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("../img/nat-7.jpg");
     }
   }
 
@@ -531,21 +529,20 @@ body {
     }
 
     &--2 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba($primary-green, 0.85),
-          rgba($dark-green, 0.85)
-        );
-      }
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($primary-green, 0.85),
+        rgba($dark-green, 0.85)
+      );
+    }
 
-
-      &--3 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba($color-tertiary-light, 0.85),
-          rgba($color-tertiary-dark, 0.85)
-        );
-      }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
   }
 
   &__details {
@@ -575,7 +572,6 @@ body {
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
-
   }
 
   &__price-box {
