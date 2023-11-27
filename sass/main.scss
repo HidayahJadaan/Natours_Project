@@ -23,8 +23,7 @@ $default-font-size: 1.6rem;
 
 // GRID
 $grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-horizontal: 6rem;
+
 // ========================================================
 
 * {
@@ -1057,4 +1056,72 @@ body {
     top: 0;
     transform: rotate(-135deg);
   }
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 9999;
+  // opacity: 0;
+  // visibility: hidden;
+  // transition: all .3s;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+      width: 75%;
+      background-color: $color-white;
+      box-shadow: 0 2rem 4rem rgba($color-black, .2);
+      border-radius: 3px;
+      display: table;
+      overflow: hidden;
+      // opacity: 0;
+      // transform: translate(-50%, -50%) scale(.25);
+      // transition: all .5s .2s;
+  }
+
+  &__left {
+      width: 33.333333%;
+      display: table-cell;
+  }
+
+  &__right {
+      width: 66.6666667%;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 3rem 5rem;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 4rem; // default --> 1em =14px
+    column-rule: 1px solid $color-grey-light-2;
+  }
+
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+-moz-hyphens: auto;
+-ms-hyphens: auto;
+-webkit-hyphens: auto;
+  hyphens: auto;
 }
