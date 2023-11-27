@@ -10,6 +10,8 @@ $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;
 
 $color-grey-dark: #777;
+$color-grey-dark-2: #999;
+
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
 $color-white: #fff;
@@ -624,15 +626,15 @@ body {
   display: grid;
   // grid-template-columns: repeat(2, 1fr);
   gap: 8rem;
-  &:not(:last-child){
-    margin: 0  auto 7rem 0;
+  &:not(:last-child) {
+    margin: 0 auto 7rem 0;
   }
 }
 .story {
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-  background-color: rgba( $color-white, 0.4);
+  background-color: rgba($color-white, 0.4);
   border-radius: 3px;
   padding: 6rem;
   font-size: $default-font-size;
@@ -685,11 +687,11 @@ body {
   &:hover &__img {
     transform: translateX(-4rem) scale(1);
     // brightness: +100% --> darker , -100% --> lighter
-    filter: blur(3px) brightness(80%); 
+    filter: blur(3px) brightness(80%);
   }
 }
 
-.bg-video{
+.bg-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -697,24 +699,20 @@ body {
   width: 100%;
   z-index: -1;
   opacity: 0.15;
-overflow: hidden;
-  &__content{
+  overflow: hidden;
+  &__content {
     height: 100%;
     width: 100%;
-    object-fit:cover ;
+    object-fit: cover;
   }
 }
 
-
-.section-book{
+.section-book {
   padding: 15rem 0;
-  background-image: linear-gradient(to right bottom,
-  $light-green, $dark-green
-  );
+  background-image: linear-gradient(to right bottom, $light-green, $dark-green);
   // border: 1px solid blue;
-
 }
-.book-row{
+.book-row {
   padding: 0 12rem;
   max-width: $grid-width;
   margin: 0 auto;
@@ -724,13 +722,15 @@ overflow: hidden;
   // border: 1px solid red;
 }
 
-.book{
+.book {
   // border: 1px solid blue;
-  background-image: linear-gradient(105deg,
-  (rgba($color-white, 0.9)) 0%,
-  (rgba($color-white, 0.9)) 50%,
-   transparent 50%),
-   url('../img/nat-10.jpg');
+  background-image: linear-gradient(
+      105deg,
+      (rgba($color-white, 0.9)) 0%,
+      (rgba($color-white, 0.9)) 50%,
+      transparent 50%
+    ),
+    url("../img/nat-10.jpg");
 
   background-repeat: no-repeat;
   background-size: 100%;
@@ -738,9 +738,56 @@ overflow: hidden;
   height: 40rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 
-  &__form{
-    width: 50%;
+  &__form {
+    width: 60%;
     padding: 6rem;
   }
 }
- 
+
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &__input {
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.2rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 80%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $primary-green;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      // only works on Safari and Chrome
+      color: $color-grey-dark-2;
+    }
+  }
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+  &__input:placeholder-shown + &__label {
+    // should be direct siblings
+    opacity: 0;
+    // we can't animate the visibility that's why we should use it with opacity
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
