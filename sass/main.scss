@@ -157,6 +157,7 @@ body {
 
 // ========================================================
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -166,8 +167,12 @@ body {
     border-radius: 100px;
     transition: all 0.2s;
     position: relative;
+font-size: 1.3rem;
+    // Change for the button element
+    border: none;
+    cursor: pointer;
   }
-  &:hover {
+  &:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
@@ -175,7 +180,8 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
   }
-  &:active {
+  &:active  , &:focus{
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
@@ -262,7 +268,7 @@ body {
 }
 
 .u-margin-bottom-medium {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.5rem !important;
 }
 
 .u-margin-bottom-small {
@@ -759,6 +765,7 @@ body {
     border-bottom: 3px solid transparent;
     width: 80%;
     display: block;
+    transition: all 0.3s;
 
     &:focus {
       outline: none;
@@ -790,4 +797,48 @@ body {
     visibility: hidden;
     transform: translateY(-4rem);
   }
+
+  &__radio-group {
+    width: 44%;
+    display: inline-block;
+  }
+  &__radio-input{
+    display: none;
+  }
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $primary-green;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top:-0.4rem;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $primary-green;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+}
 }
