@@ -60,6 +60,23 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 
+
+  @include respond(phone){
+    height: 80vh;
+
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+  
+  }
+
+  @include respond(tab-port){
+    height: 80vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60px, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+  
+  }
+
+
   &__logo-box {
     position: absolute;
     top: 40px;
@@ -121,6 +138,15 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5rem;
+
+
+  @include respond(tab-port){
+    // margin-bottom: 0;
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+
+  }
+
 }
 .feature-box {
   background-color: rgba($color-white, 0.8);
@@ -159,6 +185,13 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+
+  @include respond(tab-port){
+    margin-bottom: 0;
+    grid-template-columns: repeat(1, 1fr);
+    width: 80%;
+
+  }
 }
 .card {
   perspective: 150rem;

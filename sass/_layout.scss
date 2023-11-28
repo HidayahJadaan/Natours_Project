@@ -1,8 +1,16 @@
+@import "./mixins";
 // ========================================================
 .section-about {
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
+
+
+    
+    @include respond(tab-port){
+     padding: 15rem 0;
+    }
+
   }
 
   .section-features {
@@ -141,7 +149,9 @@
     padding: 10rem 0;
     font-size: 1.1rem;
     color: $color-grey-light-1;
-  
+    @include respond(tab-port){
+     padding: 8rem 0;
+    }
     &__logo-box {
       text-align: center;
       margin-bottom: 8rem;
@@ -155,6 +165,13 @@
       border-top: 1px solid $color-grey-light-2;
       padding-top: 2rem;
       display: inline-block;
+
+
+      @include respond(tab-port){
+       width: 100%;
+       text-align: center;
+       }
+
     }
   
     &__list {
@@ -193,6 +210,11 @@
       padding-top: 2rem;
       width: 80%;
       float: right;
+
+      @include respond(tab-port){
+        width: 100%;
+        float: none;
+       }
     }
   }
   
@@ -214,6 +236,8 @@
       text-align: center;
       cursor: pointer;
     }
+  
+    
     &__background {
       height: 6rem;
       width: 6rem;
@@ -226,6 +250,7 @@
   
       // transform: scale(80);
       transition: transform 0.9s cubic-bezier(0.06, 0, 0.07, 1);
+   
     }
   
     &__nav {
