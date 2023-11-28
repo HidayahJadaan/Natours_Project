@@ -29,12 +29,15 @@
     & > * {
       transform: skewY(7deg);
     }
+
+  
   }
 
   .section-tours {
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
     margin-top: -20rem;
+
   }
 
   .section-stories {
@@ -42,19 +45,27 @@
     padding: 15rem 0;
     // background-color: $color-grey-light-1;
     position: relative;
+
+  
   }
 
   .section-book {
     padding: 15rem 0;
     background-image: linear-gradient(to right bottom, $light-green, $dark-green);
     // border: 1px solid blue;
+
+   
   }
 
   
 .form {
     &__group:not(:last-child) {
       margin-bottom: 2rem;
+
     }
+
+    
+  
     &__input {
       font-size: 1.2rem;
       font-family: inherit;
@@ -67,7 +78,8 @@
       width: 80%;
       display: block;
       transition: all 0.3s;
-  
+   
+
       &:focus {
         outline: none;
         box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -102,6 +114,9 @@
     &__radio-group {
       width: 44%;
       display: inline-block;
+
+    
+
     }
     &__radio-input {
       display: none;
@@ -155,6 +170,10 @@
     &__logo-box {
       text-align: center;
       margin-bottom: 8rem;
+
+      @include respond(tab-port){
+        margin-bottom: 6rem;
+       }
     }
   
     &__logo {
