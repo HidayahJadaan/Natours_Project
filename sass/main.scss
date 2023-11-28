@@ -407,7 +407,7 @@ body {
     }
 
     &__price-value {
-      font-size: 6rem;
+      font-size: 4rem;
     }
   }
 }
@@ -432,6 +432,17 @@ body {
   padding-left: 9rem;
   transform: skewX(-12deg);
 
+  @include respond(tab-port){
+    width: 90%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+
+  @include respond(phone){
+    transform: skewX(0);
+
+  }
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -445,6 +456,11 @@ body {
 
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    @include respond(phone){
+      transform:  translateX(-3rem) skewX(0);
+  
+    }
   }
   &__img {
     height: 100%;
@@ -454,6 +470,11 @@ body {
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone){
+      transform:  translateX(0);
+  
+    }
   }
 
   &__caption {
@@ -503,13 +524,52 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 3px;
-  height: 40rem;
+  // height: 40rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+
+  @include respond(tab-land){
+    background-image: linear-gradient(
+      105deg,
+      (rgba($color-white, 0.9)) 0%,
+      (rgba($color-white, 0.9)) 60%,
+      transparent 60%
+    ),
+    url("../img/nat-10.jpg");
+background-size: cover;
+  }
+
+
+  @include respond(tab-port){
+    background-image: linear-gradient(
+     to right,
+      (rgba($color-white, 0.9)) 0,
+      (rgba($color-white, 0.9)) 100%,
+     
+    ),
+    url("../img/nat-10.jpg");
+   
+     }
+   
 
   &__form {
     width: 60%;
     padding: 6rem;
+  
+    @include respond(tab-land){
+   width: 80%;
+  
+    }
+  
+    
+  @include respond(tab-port){
+    width: 100%;
+   
+     }
+  
   }
+
+
 }
 
 // =====================
