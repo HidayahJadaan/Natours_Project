@@ -4,14 +4,33 @@
 @import "./layout";
 @import "./composition";
 @import "./bg-video";
+@import "./mixins";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-// ========================================================
 
+html {
+   // This defines what 1rem is
+   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+   @include respond(tab-land) { // width < 900?
+       font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+   }
+
+  //  Because the last one will be applied
+   @include respond(tab-port) { // width < 600?
+       font-size: 50%; //1 rem = 8px, 8/16 = 50%
+   }
+   
+   @include respond(big-desktop) {
+       font-size: 75%; //1rem = 12, 12/16
+   }
+
+}
+// ========================================================
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -19,8 +38,12 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 30px;
-}
 
+
+  @include respond(tab-port) {
+    padding: 0;
+}
+}
 // ========================================================
 .header {
   height: 95vh;
@@ -53,12 +76,12 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
   }
+
+
+
+  
 }
-
 // ========================================================
-
-
-
 .paragraph {
   font-size: 1.2rem;
 
@@ -66,7 +89,6 @@ body {
     margin-bottom: 3rem;
   }
 }
-
 .btn-text {
   &:link,
   &:visited {
@@ -92,9 +114,6 @@ body {
     transform: translateY(0);
   }
 }
-
-
-
 .cards {
   padding: 0 12rem;
   max-width: $grid-width;
@@ -103,9 +122,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 5rem;
 }
-
-
-
 .feature-box {
   background-color: rgba($color-white, 0.8);
   font-size: 1.5rem;
@@ -136,8 +152,6 @@ body {
     text-align: justify;
   }
 }
-
-
 .tours {
   padding: 0 12rem;
   //   max-width: $grid-width;
@@ -146,7 +160,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
-
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -331,9 +344,6 @@ body {
     font-weight: 100;
   }
 }
-
-
-
 .row-story {
   padding: 0 12rem;
   max-width: $grid-width;
@@ -404,10 +414,6 @@ body {
     filter: blur(3px) brightness(80%);
   }
 }
-
-
-
-
 .book-row {
   padding: 0 12rem;
   max-width: $grid-width;
@@ -417,7 +423,6 @@ body {
   gap: 8rem;
   // border: 1px solid red;
 }
-
 .book {
   // border: 1px solid blue;
   background-image: linear-gradient(
@@ -439,3 +444,12 @@ body {
     padding: 6rem;
   }
 }
+
+// =====================
+// MEDIA QUERY MANAGER
+// =====================
+// 0 - 600px ==> Phone
+//600 - 900px ==> Tablet portrait
+// 900 - 1200px ==> Tablet landscape
+// 1200 - 1800px ==> is where our normal styles apply
+// 1800px + : Big Desktop
