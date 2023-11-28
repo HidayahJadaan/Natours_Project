@@ -984,3 +984,7 @@ body {
     @media only screen and (max-width: 56.25em) {
       .book__form {
         width: 100%; } }
+
+::selection {
+  background-color: #55c57a;
+  color: #fff; }
