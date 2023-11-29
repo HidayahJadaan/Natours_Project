@@ -5,45 +5,8 @@
       margin-bottom: 3rem;
     }
   }
-  .btn-text {
-    &:link,
-    &:visited {
-      font-size: $default-font-size;
-      color: $primary-green;
-      display: inline-block;
-      text-decoration: none;
-      border-bottom: 1px solid $primary-green;
-      padding: 3px;
-      transition: all 0.2s;
-    }
-  
-    &:hover {
-      background-color: $primary-green;
-      color: $color-white;
-      box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
-      transform: translateY(-2px);
-      border-radius: 7px;
-    }
-  
-    &:active {
-      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
-      transform: translateY(0);
-    }
-  }
-  .cards {
-    padding: 0 12rem;
-    max-width: $grid-width;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5rem;
-  
-    @include respond(tab-port) {
-      // margin-bottom: 0;
-      grid-template-columns: repeat(1, 1fr);
-      // width: 80%;
-    }
-  }
+
+
   .feature-box {
     background-color: rgba($color-white, 0.8);
     font-size: 1.5rem;
@@ -74,20 +37,7 @@
       text-align: justify;
     }
   }
-  .tours {
-    padding: 0 12rem;
-    //   max-width: $grid-width;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-  
-    @include respond(tab-port) {
-      margin-bottom: 0;
-      grid-template-columns: repeat(1, 1fr);
-      // width: 80%;
-    }
-  }
+ 
   .card {
     perspective: 150rem;
     -moz-perspective: 150rem;
@@ -318,16 +268,7 @@
       }
     }
   }
-  .row-story {
-    padding: 0 12rem;
-    max-width: $grid-width;
-    display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    gap: 8rem;
-    &:not(:last-child) {
-      margin: 0 auto 7rem 0;
-    }
-  }
+
   .story {
     width: 100%;
     margin: 0 auto;
@@ -409,15 +350,7 @@
       filter: blur(3px) brightness(80%);
     }
   }
-  .book-row {
-    padding: 0 12rem;
-    max-width: $grid-width;
-    margin: 0 auto;
-    display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    gap: 8rem;
-    // border: 1px solid red;
-  }
+
   .book {
     // border: 1px solid blue;
     background-image: linear-gradient(

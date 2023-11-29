@@ -1,0 +1,51 @@
+.tours {
+    padding: 0 12rem;
+    //   max-width: $grid-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  
+    @include respond(tab-port) {
+      margin-bottom: 0;
+      grid-template-columns: repeat(1, 1fr);
+      // width: 80%;
+    }
+  }
+
+  .cards {
+    padding: 0 12rem;
+    max-width: $grid-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+  
+    @include respond(tab-port) {
+      // margin-bottom: 0;
+      grid-template-columns: repeat(1, 1fr);
+      // width: 80%;
+    }
+  }
+
+  .book-row {
+    padding: 0 12rem;
+    max-width: $grid-width;
+    margin: 0 auto;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+    // border: 1px solid red;
+  }
+
+
+  .row-story {
+    padding: 0 12rem;
+    max-width: $grid-width;
+    display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+    &:not(:last-child) {
+      margin: 0 auto 7rem 0;
+    }
+  }
